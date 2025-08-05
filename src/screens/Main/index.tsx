@@ -1,11 +1,51 @@
-import { Text, View } from "react-native"
+import { View } from "react-native"
+import { StatusBar } from 'expo-status-bar';
+import Header from "../../components/Header"
+import { styles } from "./index.styles"
+import ButtonsList from "../../components/ButtonsList";
+import { ButtonsListProps } from "../../components/ButtonsList/index.types";
+import { ButtonProps } from "../../components/Button/index.types";
+import Button from "../../components/Button";
+import { useNavigation } from '@react-navigation/native';
+import { NavigationProps } from "./index.types";
 
 const MainScreen = () => {
+    const navigation = useNavigation<NavigationProps>();
+
+    const links = [
+        {
+            text: "Linkedin",
+            icon: "linkedin",
+            onPress: () => {},
+            variant: "withIcon"
+        },
+        {
+            text: "Github",
+            icon: "github",
+            onPress: () => {},
+            variant: "withIcon"
+        },
+        {
+            text: "Email",
+            icon: "mail",
+            onPress: () => {},
+            variant: "withIcon"
+        }
+    ] as ButtonProps[];
+    
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: "#000" }}>
-            <Text style={{ color: "#fff"}}>
-                Main
-            </Text>
+        <View style={styles.container}>
+            <Header title="Leandro Fonseca" />
+
+            <ButtonsList buttons={links} />
+
+            <Button
+                text="See skills"
+                variant="ghost"
+                onPress={() => navigation.navigate("Skills")}
+            />
+
+            <StatusBar style="light" />
         </View>
     )
 }
