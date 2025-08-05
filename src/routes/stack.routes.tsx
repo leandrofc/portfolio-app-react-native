@@ -1,9 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 
-const { Navigator, Screen } = createNativeStackNavigator();
+const { Navigator, Screen } = createNativeStackNavigator<StackParamList>();
 
 import MainScreen from "../screens/Main";
 import SkillsScreen from "../screens/Skills";
+import { StackParamList } from "./index.types";
 
 export function StackRoutes() {
     return (
