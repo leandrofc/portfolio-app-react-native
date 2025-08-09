@@ -1,4 +1,4 @@
-import { View } from "react-native"
+import { View, Linking } from "react-native"
 import { StatusBar } from 'expo-status-bar';
 import Header from "../../components/Header"
 import { styles } from "./index.styles"
@@ -16,19 +16,19 @@ const MainScreen = () => {
         {
             text: "Linkedin",
             icon: "linkedin",
-            onPress: () => {},
+            onPress: () => Linking.openURL("https://www.linkedin.com/in/leandro-fonseca-frontend/"),
             variant: "withIcon"
         },
         {
             text: "Github",
             icon: "github",
-            onPress: () => {},
+            onPress: () => Linking.openURL("https://github.com/leandrofc"),
             variant: "withIcon"
         },
         {
             text: "Email",
             icon: "mail",
-            onPress: () => {},
+            onPress: () => Linking.openURL("mailto:leandromkt@outlook.com"),
             variant: "withIcon"
         }
     ] as ButtonProps[];
