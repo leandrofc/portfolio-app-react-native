@@ -1,4 +1,4 @@
-import { Pressable, View } from "react-native"
+import { Linking, Pressable, View } from "react-native"
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import { SkillItemProps } from "../../components/SkillItem/index.types";
@@ -52,7 +52,7 @@ const SkillsScreen = () => {
 
             <Button
                 text="Talk to me"
-                onPress={() => {}}
+                onPress={() => Linking.openURL("mailto:leandromkt@outlook.com")}
             />
 
             <StatusBar style="light" />
