@@ -15,7 +15,13 @@ const Button = ({ text, onPress, variant = "default", icon }: ButtonProps) => {
     return(
         <Pressable
             onPress={onPress}
-            style={containerStyle[variant]}
+            style={({ pressed }) => [
+                containerStyle[variant],
+                {
+                  transform: [{ scale: pressed ? 0.95 : 1 }],
+                  opacity: pressed ? 0.6 : 1
+                }
+            ]}
         >
             <View style={styles.contentContainer}>
                 {icon && 
