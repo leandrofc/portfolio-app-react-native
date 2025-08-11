@@ -3,7 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import Header from "../../components/Header"
 import { styles } from "./index.styles"
 import ButtonsList from "../../components/ButtonsList";
-import { ButtonsListProps } from "../../components/ButtonsList/index.types";
 import { ButtonProps } from "../../components/Button/index.types";
 import Button from "../../components/Button";
 import { useNavigation } from '@react-navigation/native';
